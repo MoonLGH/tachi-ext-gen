@@ -1,0 +1,16 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+ext {
+    extName = 'LectorManga'
+    pkgNameSuffix = 'es.lectormanga'
+    extClass = '.LectorManga'
+    extVersionCode = 23
+    isNsfw = true
+}
+
+dependencies {
+    implementation project(':lib-ratelimit')
+}
+
+apply from: "$rootDir/common.gradle"

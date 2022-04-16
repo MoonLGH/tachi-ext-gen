@@ -1,0 +1,17 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlinx-serialization'
+
+ext {
+    extName = 'MangaVibe'
+    pkgNameSuffix = 'pt.mangavibe'
+    extClass = '.MangaVibe'
+    extVersionCode = 1
+    isNsfw = true
+}
+
+dependencies {
+    implementation project(':lib-ratelimit')
+}
+
+apply from: "$rootDir/common.gradle"

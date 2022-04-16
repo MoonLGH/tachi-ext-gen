@@ -1,0 +1,15 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+ext {
+    extName = 'NOISE Manga'
+    pkgNameSuffix = 'all.noisemanga'
+    extClass = '.NoiseMangaFactory'
+    extVersionCode = 4
+}
+
+dependencies {
+    implementation project(':lib-ratelimit')
+}
+
+apply from: "$rootDir/common.gradle"

@@ -1,0 +1,12 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+ext {
+    extName = 'HentaiVN'
+    pkgNameSuffix = 'vi.hentaivn'
+    extClass = '.HentaiVN'
+    extVersionCode = 12
+    isNsfw = true
+}
+
+apply from: "$rootDir/common.gradle"

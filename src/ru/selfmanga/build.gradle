@@ -1,0 +1,15 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+ext {
+    extName = 'Selfmanga'
+    pkgNameSuffix = 'ru.selfmanga'
+    extClass = '.Selfmanga'
+    extVersionCode = 18
+}
+
+dependencies {
+    implementation project(':lib-ratelimit')
+}
+
+apply from: "$rootDir/common.gradle"

@@ -1,0 +1,16 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+ext {
+    extName = 'AllHentai'
+    pkgNameSuffix = 'ru.allhentai'
+    extClass = '.AllHentai'
+    extVersionCode = 18
+    isNsfw = true
+}
+
+dependencies {
+    implementation project(':lib-ratelimit')
+}
+
+apply from: "$rootDir/common.gradle"

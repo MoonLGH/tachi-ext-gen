@@ -1,0 +1,15 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+ext {
+    extName = 'Readmanga'
+    pkgNameSuffix = 'ru.readmanga'
+    extClass = '.Readmanga'
+    extVersionCode = 40
+}
+
+dependencies {
+    implementation project(':lib-ratelimit')
+}
+
+apply from: "$rootDir/common.gradle"

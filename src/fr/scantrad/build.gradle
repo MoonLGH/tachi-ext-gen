@@ -1,0 +1,15 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+ext {
+    extName = 'Scantrad'
+    pkgNameSuffix = 'fr.scantrad'
+    extClass = '.Scantrad'
+    extVersionCode = 17
+}
+
+dependencies {
+    implementation project(':lib-ratelimit')
+}
+
+apply from: "$rootDir/common.gradle"

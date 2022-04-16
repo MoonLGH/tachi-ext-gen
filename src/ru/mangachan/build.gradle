@@ -1,0 +1,15 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+ext {
+    extName = 'Mangachan'
+    pkgNameSuffix = 'ru.mangachan'
+    extClass = '.Mangachan'
+    extVersionCode = 12
+}
+
+dependencies {
+    implementation project(':lib-ratelimit')
+}
+
+apply from: "$rootDir/common.gradle"
