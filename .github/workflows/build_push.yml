@@ -69,7 +69,7 @@ jobs:
 
       - name: Upload "${{ matrix.lang }}" APKs
         uses: actions/upload-artifact@v2
-        if: "github.repository == 'tachiyomiorg/tachiyomi-extensions'"
+        if: "github.repository == 'moonlgh/tachi-ext-gen'"
         with:
           name: "multisrc-${{ matrix.lang }}-apks"
           path: "**/*.apk"
@@ -115,7 +115,7 @@ jobs:
 
       - name: Upload "${{ matrix.lang }}" APKs
         uses: actions/upload-artifact@v2
-        if: "github.repository == 'tachiyomiorg/tachiyomi-extensions'"
+        if: "github.repository == 'moonlgh/tachi-ext-gen'"
         with:
           name: "individual-${{ matrix.lang }}-apks"
           path: "**/*.apk"
@@ -129,7 +129,7 @@ jobs:
     needs:
       - build_multisrc
       - build_individual
-    if: "github.repository == 'tachiyomiorg/tachiyomi-extensions'"
+    if: "github.repository == 'moonlgh/tachi-ext-gen'"
     runs-on: ubuntu-latest
     steps:
       - name: Download APK artifacts
@@ -152,7 +152,7 @@ jobs:
         run: |
           cd main
           ./.github/scripts/move-apks.sh
-          INSPECTOR_LINK="$(curl -s "https://api.github.com/repos/tachiyomiorg/tachiyomi-extensions-inspector/releases/latest" | jq -r '.assets[0].browser_download_url')"
+          INSPECTOR_LINK="$(curl -s "https://api.github.com/repos/moonlgh/tachi-ext-gen-inspector/releases/latest" | jq -r '.assets[0].browser_download_url')"
           curl -L "$INSPECTOR_LINK" -o ./Inspector.jar
           java -jar ./Inspector.jar "apk" "output.json" "tmp"
           ./.github/scripts/create-repo.sh
