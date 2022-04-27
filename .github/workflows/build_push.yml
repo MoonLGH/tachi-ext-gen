@@ -46,7 +46,10 @@ jobs:
           mkdir -p ~/.gradle
           cp .github/runner-files/ci-gradle.properties ~/.gradle/gradle.properties
           echo ${{ secrets.SIGNING_KEY }} | base64 -d > signingkey.jks
-
+      - name: test signing key
+        run : |
+          cat signingkey.jks
+          
       - name: Make stuff executeable
         run: |
           chmod +x ./gradlew
