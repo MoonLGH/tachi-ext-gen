@@ -46,7 +46,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile rootProject.file("signingkey.jks")
+            storeFile Base64.decodeBase64(System.getenv("SIGNING_KEY"))
             storePassword System.getenv("KEY_STORE_PASSWORD")
             keyAlias System.getenv("ALIAS")
             keyPassword System.getenv("KEY_PASSWORD")
